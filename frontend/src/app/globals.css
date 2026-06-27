@@ -1,0 +1,240 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: oklch(0.96 0.01 240); /* bg-slate-50 equivalent */
+    --foreground: oklch(0.12 0.02 240);
+    --card: oklch(1 0 0); /* white */
+    --card-foreground: oklch(0.12 0.02 240);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.12 0.02 240);
+    
+    /* VLP Brand Blue (Hex #0052cc) in OKLCH */
+    --primary: oklch(0.488 0.243 264.376);
+    --primary-foreground: oklch(0.985 0 0);
+    
+    --secondary: oklch(0.96 0.01 240);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.96 0.01 240);
+    --muted-foreground: oklch(0.45 0.02 240);
+    --accent: oklch(0.94 0.02 260);
+    --accent-foreground: oklch(0.488 0.243 264.376);
+    
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.985 0 0);
+    
+    --border: oklch(0.92 0.01 240);
+    --input: oklch(0.92 0.01 240);
+    --ring: oklch(0.488 0.243 264.376 / 30%);
+    --radius: 0.75rem;
+
+    /* Custom brand variables for Classic */
+    --brand-blue: #0052cc;
+    --brand-hover: #0043a4;
+    --brand-light: #e6f0ff;
+    --brand-navy: #003685;
+    --brand-dark: #0f172a;
+    
+    --logo-filter: grayscale(1) brightness(0.35);
+    --hero-bg: #00173d;
+    --hero-overlay: linear-gradient(to right, rgba(0, 20, 51, 0.85) 0%, rgba(0, 39, 102, 0.45) 50%, transparent 100%);
+    --hero-title-color: #ffffff;
+    --hero-body-color: rgba(255, 255, 255, 0.9);
+    --hero-btn-primary-bg: #ffffff;
+    --hero-btn-primary-hover: #f8fafc;
+    --hero-btn-primary-text: #0052cc;
+    --hero-btn-secondary-border: rgba(255, 255, 255, 0.4);
+    --hero-btn-secondary-bg: rgba(255, 255, 255, 0.05);
+    --hero-btn-secondary-hover: rgba(255, 255, 255, 0.1);
+    --hero-btn-secondary-text: #ffffff;
+    --hero-span-color: #59aeff;
+    --product-range-bg: #004fbc;
+    --product-range-text-title: #ffffff;
+    --product-range-text-body: rgba(255, 255, 255, 0.8);
+    --product-range-card-bg: #ffffff;
+    --product-range-card-text: #0f172a;
+    --custom-card-bg: #e3efff;
+    --custom-card-border: #dbeafe;
+    --custom-card-text: #0f172a;
+    
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --header-text: #0f172a;
+    --footer-bg: #f3f7ff;
+    --footer-text: #475569;
+    --footer-logo-bg: #004fbc;
+    --footer-border: #dbeafe;
+  }
+  
+  .theme-light {
+    --background: #ffffff;
+    --foreground: #1e293b;
+    --card: #ffffff;
+    --card-foreground: #1e293b;
+    --popover: #ffffff;
+    --popover-foreground: #1e293b;
+    
+    --primary: #4f46e5;
+    --primary-foreground: #ffffff;
+    
+    --secondary: #f8fafc;
+    --secondary-foreground: #1e293b;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --accent: #eff6ff;
+    --accent-foreground: #4f46e5;
+    
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    
+    --border: #e2e8f0;
+    --input: #cbd5e1;
+    --ring: rgba(79, 70, 229, 0.3);
+
+    /* Custom brand variables for Light Theme */
+    --brand-blue: #4f46e5;
+    --brand-hover: #4338ca;
+    --brand-light: #e0e7ff;
+    --brand-navy: #312e81;
+    --brand-dark: #1e293b;
+    
+    --logo-filter: grayscale(1) brightness(0.2);
+    --hero-bg: #f8fafc;
+    --hero-overlay: linear-gradient(to right, rgba(248, 250, 252, 0.95) 0%, rgba(248, 250, 252, 0.8) 50%, rgba(248, 250, 252, 0.2) 100%);
+    --hero-title-color: #0f172a;
+    --hero-body-color: #475569;
+    --hero-btn-primary-bg: #4f46e5;
+    --hero-btn-primary-hover: #4338ca;
+    --hero-btn-primary-text: #ffffff;
+    --hero-btn-secondary-border: #cbd5e1;
+    --hero-btn-secondary-bg: #f1f5f9;
+    --hero-btn-secondary-hover: #e2e8f0;
+    --hero-btn-secondary-text: #1e293b;
+    --hero-span-color: #4f46e5;
+    --product-range-bg: #f1f5f9;
+    --product-range-text-title: #0f172a;
+    --product-range-text-body: #475569;
+    --product-range-card-bg: #ffffff;
+    --product-range-card-text: #1e293b;
+    --custom-card-bg: #e0e7ff;
+    --custom-card-border: #c7d2fe;
+    --custom-card-text: #312e81;
+    
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --header-text: #1e293b;
+    --footer-bg: #f8fafc;
+    --footer-text: #64748b;
+    --footer-logo-bg: #4f46e5;
+    --footer-border: #e2e8f0;
+  }
+
+  .theme-dark, .dark {
+    --background: #090d16;
+    --foreground: #f8fafc;
+    --card: #151c2c;
+    --card-foreground: #f8fafc;
+    --popover: #151c2c;
+    --popover-foreground: #f8fafc;
+    
+    --primary: #06b6d4;
+    --primary-foreground: #090d16;
+    
+    --secondary: #1e293b;
+    --secondary-foreground: #f8fafc;
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+    --accent: rgba(6, 182, 212, 0.15);
+    --accent-foreground: #06b6d4;
+    
+    --destructive: #f43f5e;
+    --destructive-foreground: #ffffff;
+    
+    --border: #1e293b;
+    --input: #1e293b;
+    --ring: rgba(6, 182, 212, 0.4);
+
+    /* Custom brand variables for Dark Theme */
+    --brand-blue: #06b6d4;
+    --brand-hover: #0891b2;
+    --brand-light: rgba(6, 182, 212, 0.15);
+    --brand-navy: #0e7490;
+    --brand-dark: #f8fafc;
+    
+    --logo-filter: invert(1) brightness(1);
+    --hero-bg: #090d16;
+    --hero-overlay: linear-gradient(to right, rgba(9, 13, 22, 0.95) 0%, rgba(9, 13, 22, 0.7) 50%, transparent 100%);
+    --hero-title-color: #ffffff;
+    --hero-body-color: #94a3b8;
+    --hero-btn-primary-bg: #06b6d4;
+    --hero-btn-primary-hover: #0891b2;
+    --hero-btn-primary-text: #090d16;
+    --hero-btn-secondary-border: #334155;
+    --hero-btn-secondary-bg: #151c2c;
+    --hero-btn-secondary-hover: #1e293b;
+    --hero-btn-secondary-text: #f8fafc;
+    --hero-span-color: #06b6d4;
+    --product-range-bg: #0c121e;
+    --product-range-text-title: #ffffff;
+    --product-range-text-body: #94a3b8;
+    --product-range-card-bg: #151c2c;
+    --product-range-card-text: #f8fafc;
+    --custom-card-bg: rgba(6, 182, 212, 0.08);
+    --custom-card-border: #1e293b;
+    --custom-card-text: #06b6d4;
+    
+    --header-bg: rgba(9, 13, 22, 0.95);
+    --header-text: #f8fafc;
+    --footer-bg: #0c121e;
+    --footer-text: #94a3b8;
+    --footer-logo-bg: #06b6d4;
+    --footer-border: #1e293b;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Glassmorphism utility */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+}
+
+.glass-effect-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Active navigations underline */
+.link-underline {
+  @apply relative py-1;
+}
+
+.link-underline::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-brand-blue rounded transition-all duration-300 ease-out;
+}
+
+.link-underline:hover::after,
+.link-underline.active::after {
+  @apply w-full;
+}

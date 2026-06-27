@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": "Product Range catalog items"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "badge": {
+      "type": "string"
+    },
+    "imageMedia": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Boxes",
+        "Sheets",
+        "Beans",
+        "Pharma"
+      ],
+      "required": true
+    },
+    "capacityLiters": {
+      "type": "integer",
+      "default": 0
+    },
+    "description": {
+      "type": "text"
+    },
+    "footerTag": {
+      "type": "string"
+    },
+    "specs": {
+      "type": "json"
+    }
+  }
+}
