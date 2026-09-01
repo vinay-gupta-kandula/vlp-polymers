@@ -37,6 +37,11 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 
+# Strapi build & cache
+**/.strapi/
+**/.tmp/
+**/.cache/
+
 # IDEs and editors
 .idea/
 .vscode/

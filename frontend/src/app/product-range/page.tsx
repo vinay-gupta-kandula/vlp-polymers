@@ -4,6 +4,7 @@ import React, { useState, useMemo, useCallback, useEffect } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { STRAPI_URL } from "@/lib/utils";
 import RequirementModal from "@/components/RequirementModal";
 import { Card } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
@@ -453,14 +454,14 @@ export default function ProductRangePage() {
     const fetchProducts = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch("http://localhost:1337/api/products?populate=*");
+        const response = await fetch(`${STRAPI_URL}/api/products?populate=*`);
         if (response.ok) {
           const json = await response.json();
           if (json && json.data && json.data.length > 0) {
             const mappedProducts = json.data.map((item: StrapiProductItem) => {
               const mediaUrl = item.imageMedia?.url || item.imageMedia?.data?.attributes?.url;
               const imageUrl = mediaUrl 
-                ? (mediaUrl.startsWith("http") ? mediaUrl : `http://localhost:1337${mediaUrl}`)
+                ? (mediaUrl.startsWith("http") ? mediaUrl : `${STRAPI_URL}${mediaUrl}`)
                 : (item.imageUrl || "/assets/box_60.png");
 
               return {

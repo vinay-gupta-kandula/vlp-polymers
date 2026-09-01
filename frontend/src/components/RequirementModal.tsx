@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { STRAPI_URL } from "@/lib/utils";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -85,7 +86,7 @@ export default function RequirementModal({ isOpen, onOpenChange, defaultProductT
         message: messageBody
       };
 
-      const response = await fetch("http://localhost:1337/api/inquiries", {
+      const response = await fetch(`${STRAPI_URL}/api/inquiries`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

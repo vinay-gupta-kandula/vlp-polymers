@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { STRAPI_URL } from "@/lib/utils";
 import { useTheme } from "@/components/ThemeContext";
 import { 
   Award, 
@@ -54,7 +55,7 @@ export default function AboutUsPage() {
     setIsSubmitting(true);
     setSubmitError("");
     try {
-      const response = await fetch("http://localhost:1337/api/inquiries", {
+      const response = await fetch(`${STRAPI_URL}/api/inquiries`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -101,7 +102,7 @@ export default function AboutUsPage() {
   React.useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch("http://localhost:1337/api/reviews");
+        const response = await fetch(`${STRAPI_URL}/api/reviews`);
         if (response.ok) {
           const json = await response.json();
           if (json && json.data && json.data.length > 0) {

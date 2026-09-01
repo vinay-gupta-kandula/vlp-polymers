@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { STRAPI_URL } from "@/lib/utils";
 import { User, Phone, Mail, MapPin, Loader2 } from "lucide-react";
 
 interface StrapiLeader {
@@ -53,14 +54,14 @@ export default function LeadershipPage() {
   useEffect(() => {
     const fetchLeaders = async () => {
       try {
-        const response = await fetch("http://localhost:1337/api/leaderships?populate=*&sort=order:asc");
+        const response = await fetch(`${STRAPI_URL}/api/leaderships?populate=*&sort=order:asc`);
         if (response.ok) {
           const json = await response.json();
           if (json && json.data && json.data.length > 0) {
             const mappedLeaders = json.data.map((item: StrapiLeader) => {
               const mediaUrl = item.imageMedia?.url || item.imageMedia?.data?.attributes?.url;
               const imageUrl = mediaUrl 
-                ? (mediaUrl.startsWith("http") ? mediaUrl : `http://localhost:1337${mediaUrl}`)
+                ? (mediaUrl.startsWith("http") ? mediaUrl : `${STRAPI_URL}${mediaUrl}`)
                 : (item.imageUrl || "/assets/ceo_prasad.png");
 
               return {
