@@ -354,7 +354,7 @@ export default function Hero() {
 
           {/* Subtext */}
           <p className="text-base sm:text-lg text-[var(--hero-body-color)] font-medium leading-relaxed max-w-xl mb-10 font-sans transition-colors duration-300">
-            High-quality Thermocol products for packaging,<br className="hidden md:inline" />insulation & Industrial applications.
+            High-quality Thermocol products for packaging,<br className="hidden md:inline" /> insulation & industrial applications.
           </p>
 
           {/* Action CTAs */}
