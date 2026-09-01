@@ -63,7 +63,7 @@ export default function Header() {
           <img
             src="/assets/vlp_swan_logo.png"
             alt="VLP SWAN Logo"
-            className="h-10 md:h-12 w-auto object-contain drop-shadow-[1px_1px_0px_rgba(156,163,175,0.5)] drop-shadow-[2px_2px_0px_rgba(156,163,175,0.3)] drop-shadow-[0_8px_20px_rgba(107,114,128,0.45)] transition-transform duration-500 group-hover:scale-105"
+            className="h-10 md:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
             style={{ filter: "var(--logo-filter)" }}
           />
         </Link>
