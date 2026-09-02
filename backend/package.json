@@ -31,8 +31,11 @@
     "typescript": "^5"
   },
   "engines": {
-    "node": ">=20.0.0 <=22.x.x",
+    "node": "20.x",
     "npm": ">=6.0.0"
+  },
+  "optionalDependencies": {
+    "@swc/core-linux-x64-gnu": "^1.5.0"
   },
   "strapi": {
     "uuid": "98e99868-f343-4154-a25f-80dd3d9a7a3e",
